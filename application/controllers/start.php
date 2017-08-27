@@ -22,4 +22,19 @@ class start extends CI_Controller {
 	{
 		$this->load->view('index_view');
 	}
+	public function admin()
+	{
+		$this->load->helper('url');
+		$this->load->view('admin/index');
+	}
+	public function mojewpisy()
+	{
+		$this->load->helper('url');
+		$this->load->view('admin/mojewpisy');
+$this->load->database();
+$odp = $this->db->query("SELECT * FROM `wpisy` WHERE 1");
+$odp = $odp->result();
+echo "<br/><br/><br/><br/>";
+print_r($odp);
+	}
 }
